@@ -1,0 +1,27 @@
+<div class="container">
+  <a routerLink="/livros/novo" class="btn btn-primary">Cadastrar Livro</a>
+</div>
+<div class="container">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Titulo</th>
+        <th scope="col">Editora</th>
+        <th scope="col">Edição</th>
+        <th scope="col">Ano Publicação</th>
+        <th scope="col">Operações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let livro of livros">
+        <td>{{livro.titulo}}</td>
+        <td>{{livro.editora}}</td>
+        <td>{{livro.edicao}}</td>
+        <td>{{livro.anoPublicacao}}</td>
+        <td><a [routerLink]="['/livros/edit',livro.cod]">Editar</a> | <a href="/livros"
+            (click)="delete(livro.cod)">Deletar</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
